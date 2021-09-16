@@ -1,18 +1,11 @@
-import datetime
+import requests
 import time
-def beep(interval = 0.1, frequency = 1000):
+def gudok (i = 0.1, chastota = 1000):
     print ("\a", end = "\r")
-    time.sleep(interval)
+    time.sleep (i)
 
 content = '---. . .-.. --- .-- . -.- / .-- / --- .--. .- ... -. --- ... - ..' 
-for word in content:
-    for symbol in word:
-        if symbol == '.':
-            beep(interval = 0.1)
-        elif symbol == '-':
-            beep(interval = 0.7)
-        elif symbol == '/':
-            time.sleep(1)
+
 azbukaMorze = {'а': '.-',
                'б': '-...',
                'в': '.--',
@@ -47,22 +40,36 @@ azbukaMorze = {'а': '.-',
                'я': '.-.-',
                ' ': '/'}
 
-text_additional = {}
-
-name_machine = 'first'
-datenow = datetime.datetime.now()
-#img_
-
-import requests
 
 
-url = 'http://195.161.114.75:8080'
 
-def check_communication(url):
-    response = requests.get(url)
+
+
+adres = 'http://192.168.24.173:8080'
+
+def communication(adres):
+    response = requests.get(adres)
     if response.status_code == 200:
         print('Связь с роботом установлена!')
     else:
         print('Нет связи с роботом')    
 
-check_communication(url)
+#communication(adres)
+# for word in content:
+#     for symbol in word:
+#         if symbol == '.':
+#             gudok(i = 0.1)
+#         elif symbol == '-':
+#             gudok(i = 0.7)
+#         elif symbol == '/':
+#             time.sleep(1)
+
+
+def robot(adres, m):
+    response = requests.post(adres,m)
+    if response.status_code == 200:
+        print('Команда принята')
+        print('Бегу к вам!')
+    else:
+        print('Команда не принята! Продолжаю выполнять прежнюю инструкцию.')
+robot(adres, 'soss')            
