@@ -78,69 +78,69 @@ print(morz)
 if morz[0] == '.':
     gudok(i = 0.1)
 elif morz[0] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[0] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[1] == '.':
     gudok(i = 0.1)
 elif morz[1] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[1] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[2] == '.':
     gudok(i = 0.1)
 elif morz[2] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[2] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[3] == '.':
     gudok(i = 0.1)
 elif morz[3] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[3] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[4] == '.':
     gudok(i = 0.1)
 elif morz[4] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[4] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[5] == '.':
     gudok(i = 0.1)
 elif morz[5] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[5] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[6] == '.':
     gudok(i = 0.1)
 elif morz[6] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[6] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[7] == '.':
     gudok(i = 0.1)
 elif morz[7] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[7] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[8] == '.':
     gudok(i = 0.1)
 elif morz[8] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[8] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[9] == '.':
     gudok(i = 0.1)
 elif morz[9] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[9] == '/':
-    time.sleep(0.5)
+    time.sleep(0.9)
 if morz[10] == '.':
     gudok(i = 0.1)
 elif morz[10] == '-':
-    gudok(i = 0.3)
+    gudok(i = 0.7)
 elif morz[10] == '/':
-    time.sleep(0.5)               
+    time.sleep(0.9)               
 
 def to_robot(a, m): # функция для посыла сообщения роботу
     r = requests.post(a,m.encode('utf-8'))
