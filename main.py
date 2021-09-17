@@ -141,15 +141,8 @@ elif morz[10] == '-':
     gudok(i = 0.3)
 elif morz[10] == '/':
     time.sleep(0.5)               
-# for word in soobchenie_1:
-#     for symbol in word:
-#         if symbol == '.':
-#             gudok(i = 0.1)
-#         elif symbol == '-':
-#             gudok(i = 0.7)
-#         elif symbol == '/':
-#             time.sleep(1)
-def robot(a, m): # функция для посыла сообщения роботу
+
+def to_robot(a, m): # функция для посыла сообщения роботу
     r = requests.post(a,m.encode('utf-8'))
     if r.status_code == 200:
         print('Команда принята.')
@@ -157,7 +150,7 @@ def robot(a, m): # функция для посыла сообщения роб�
         print('Бегу к вам!')
     else:
         print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')
-robot(adres,soobchenie)
+to_robot(adres,soobchenie)
 
 
 #'---. . .-.. --- .-- . -.- / .-- / --- .--. .- ... -. --- ... - ..'
