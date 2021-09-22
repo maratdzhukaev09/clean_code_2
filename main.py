@@ -1,9 +1,14 @@
 import requests
 import time
-def gudok (i = 0.1, chastota = 1000): # функция воспроизведения звука
-    print ("\a", end = "\r")
-    time.sleep (i)
+import sys
+import os
+import pygame
+from sound import playsound,play_morse_sound
+from sound import FREQ,BITSIZE,CHANNELS,BUFFER,FRAMERATE
 
+pygame.init ()
+os.system ('cls||clear')
+pygame.mixer.init (FREQ,BITSIZE,CHANNELS,BUFFER)
 
 azbukaMorze = {'а': '.-',
                'б': '-...',
@@ -37,23 +42,43 @@ azbukaMorze = {'а': '.-',
                'э': '..-..',
                'ю': '..--',
                'я': '.-.-',
-               ' ': '/'}
+               '1': '.---- ',
+               '0': '----- ',
+               '2': '..--- ',
+               '3': '...-- ',
+               '4': '....- ',
+               '5': '..... ',
+               '6': '-.... ',
+               '7': '--... ',
+               '8': '---.. ',
+               '9': '----. ',
+               ',': '--..-- ',
+               '.': '.-.-.- ',
+               '?': '..--.. ',
+               ';': '-.-.-. ',
+               ':': '---... ',
+               "'": '.----. ',
+               '-': '-....- ',
+               '/': '-..-. ',
+               '(': '-.--.- ',
+               ')': '-.--.- ',
+               ' ': '|',
+               '_': '..--.- '}
 
 
 
 
 
+adres='http://192.168.24.173:8080'
 
-adres = 'http://192.168.24.173:8080'
-
-def communication(adres): # функция для проверки связи с роботом
+def communication(adres):
     r = requests.get(adres)
     if r.status_code == 200:
         print('Связь с роботом установлена!')
     else:
         print('Нет связи с роботом')    
-
-#communication(adres)
+    print()
+communication(adres)
 
 
 soobchenie='СОС СОС СОС' 
@@ -74,75 +99,10 @@ morz=azbukaMorze[x]+azbukaMorze[xx]+azbukaMorze[xxx]+\
     azbukaMorze[probel1]+azbukaMorze[y]+azbukaMorze[yy]+\
     azbukaMorze[yyy]+azbukaMorze[probel2]+azbukaMorze[z]+\
     azbukaMorze[zz]+azbukaMorze[zzz]        
-print(morz)
-if morz[0] == '.':
-    gudok(i = 0.1)
-elif morz[0] == '-':
-    gudok(i = 0.7)
-elif morz[0] == '/':
-    time.sleep(0.9)
-if morz[1] == '.':
-    gudok(i = 0.1)
-elif morz[1] == '-':
-    gudok(i = 0.7)
-elif morz[1] == '/':
-    time.sleep(0.9)
-if morz[2] == '.':
-    gudok(i = 0.1)
-elif morz[2] == '-':
-    gudok(i = 0.7)
-elif morz[2] == '/':
-    time.sleep(0.9)
-if morz[3] == '.':
-    gudok(i = 0.1)
-elif morz[3] == '-':
-    gudok(i = 0.7)
-elif morz[3] == '/':
-    time.sleep(0.9)
-if morz[4] == '.':
-    gudok(i = 0.1)
-elif morz[4] == '-':
-    gudok(i = 0.7)
-elif morz[4] == '/':
-    time.sleep(0.9)
-if morz[5] == '.':
-    gudok(i = 0.1)
-elif morz[5] == '-':
-    gudok(i = 0.7)
-elif morz[5] == '/':
-    time.sleep(0.9)
-if morz[6] == '.':
-    gudok(i = 0.1)
-elif morz[6] == '-':
-    gudok(i = 0.7)
-elif morz[6] == '/':
-    time.sleep(0.9)
-if morz[7] == '.':
-    gudok(i = 0.1)
-elif morz[7] == '-':
-    gudok(i = 0.7)
-elif morz[7] == '/':
-    time.sleep(0.9)
-if morz[8] == '.':
-    gudok(i = 0.1)
-elif morz[8] == '-':
-    gudok(i = 0.7)
-elif morz[8] == '/':
-    time.sleep(0.9)
-if morz[9] == '.':
-    gudok(i = 0.1)
-elif morz[9] == '-':
-    gudok(i = 0.7)
-elif morz[9] == '/':
-    time.sleep(0.9)
-if morz[10] == '.':
-    gudok(i = 0.1)
-elif morz[10] == '-':
-    gudok(i = 0.7)
-elif morz[10] == '/':
-    time.sleep(0.9)               
 
-def to_robot(a, m): # функция для посыла сообщения роботу
+def to_robot(a, m):
+    print('Отправка сообщения роботу...')
+    play_morse_sound(m)
     r = requests.post(a,m.encode('utf-8'))
     if r.status_code == 200:
         print('Команда принята.')
@@ -150,7 +110,9 @@ def to_robot(a, m): # функция для посыла сообщения ро
         print('Бегу к вам!')
     else:
         print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')
-to_robot(adres,soobchenie)
+
+to_robot(adres,morz)
+
 
 
 #'---. . .-.. --- .-- . -.- / .-- / --- .--. .- ... -. --- ... - ..'
