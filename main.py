@@ -81,10 +81,7 @@ probel2=soobchenie[7]
 z=soobchenie[8]
 zz=soobchenie[9]
 zzz=soobchenie[10]
-morz=azbukaMorze[x]+azbukaMorze[xx]+azbukaMorze[xxx]+\
-    azbukaMorze[probel1]+azbukaMorze[y]+azbukaMorze[yy]+\
-    azbukaMorze[yyy]+azbukaMorze[probel2]+azbukaMorze[z]+\
-    azbukaMorze[zz]+azbukaMorze[zzz]        
+morz=azbukaMorze[x]+azbukaMorze[xx]+azbukaMorze[xxx]+azbukaMorze[probel1]+azbukaMorze[y]+azbukaMorze[yy]+azbukaMorze[yyy]+azbukaMorze[probel2]+azbukaMorze[z]+azbukaMorze[zz]+azbukaMorze[zzz]        
 adres='http://192.168.24.173:8080'
 import requests
 def communication( adres ):
