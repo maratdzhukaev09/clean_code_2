@@ -113,7 +113,7 @@ def play_morze_sound( morz ):
         elif morz[ 1 ] == '|':
              playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
-        if morz[ 2 ] == '.':
+        if   morz[ 2 ] == '.':
              playsound(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 2 ] == '-':
              playsound(pygame.mixer.Sound( 'dash.ogg' ))
@@ -268,13 +268,13 @@ def play_morze_sound( morz ):
              playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 24 ] == '.':
-            playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             playsound(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 24 ] == '-':
              playsound(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 24 ] == '|':
              playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
-        if morz[ 25 ] == '.':
+        if   morz[ 25 ] == '.':
              playsound(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 25 ] == '-':
              playsound(pygame.mixer.Sound( 'dash.ogg' ))
@@ -288,7 +288,7 @@ def play_morze_sound( morz ):
         elif morz[ 26 ] == '|':
              playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
-        if  morz[ 27 ] == '.':
+        if   morz[ 27 ] == '.':
              playsound(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 27 ] == '-':
              playsound(pygame.mixer.Sound( 'dash.ogg' ))
