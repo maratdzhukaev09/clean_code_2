@@ -311,4 +311,3 @@ def to_robot(a, m):
         print('Команда принята.');time.sleep(1);print('Бегу к вам!')
     else:
         print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')
-to_robot(adres, morz)
