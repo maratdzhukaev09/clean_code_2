@@ -1,7 +1,4 @@
 
-FREQ = 44100
-BITSIZE = -16
-CHANNELS = 2
 BUFFER = 1024
 FRAMERATE = 60
 MORSE_SOUND = {
@@ -13,7 +10,7 @@ import pygame
 pygame.init ()
 import os
 os.system ('cls||clear')
-pygame.mixer.init (FREQ,BITSIZE,CHANNELS,BUFFER)
+pygame.mixer.init (BUFFER)
 azbukaMorze = {'а': '.-',
                'б': '-...',
                'в': '.--',
