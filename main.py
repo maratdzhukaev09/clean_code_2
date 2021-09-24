@@ -104,7 +104,6 @@ def igrat_muzyku( soundfile ):
     sound.play( )
     while pygame.mixer.get_busy( ):
         clock.tick( FRAMERATE )
-from alive_progress import alive_bar
 def proigrat_muzyku_Morze( morz ):
     print( )
     with alive_bar( len(morz),bar = 'brackets',spinner = 'dots_waves2' ) as bar:
@@ -312,7 +311,6 @@ def proigrat_muzyku_Morze( morz ):
              igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
     print()
-import time
 def otpravka_soobshcheniya_robotu(adres, soobshchenie):
     print('Отправка сообщения роботу...')#;proigrat_muzyku_Morze(soobshchenie)
     otvet = requests.post(adres,soobshchenie.encode('utf-8'))
