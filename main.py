@@ -98,7 +98,6 @@ def svyazatsya_s_robotom( adres ):
         print( 'Нет связи с роботом' )    
     print( )
 svyazatsya_s_robotom(adres)
-print(len(morz))
 def igrat_muzyku( soundfile ):
     sound=pygame.mixer.Sound( soundfile )
     clock=pygame.time.Clock( )
