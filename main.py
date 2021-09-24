@@ -81,233 +81,242 @@ zzz=soobchenie[10]
 morz=azbukaMorze[x]+azbukaMorze[xx]+azbukaMorze[xxx]+azbukaMorze[probel1]+azbukaMorze[y]+azbukaMorze[yy]+azbukaMorze[yyy]+azbukaMorze[probel2]+azbukaMorze[z]+azbukaMorze[zz]+azbukaMorze[zzz]        
 adres='http://192.168.24.173:8080'
 import requests
-def communication( adres ):
-    r=requests.get( adres )
-    if r.status_code==200:
+from alive_progress import alive_bar
+import time
+def svyazatsya_s_robotom( adres ):
+    otvet=requests.get( adres )
+    soobshchenie = 'Проверка связи с роботом...' 
+    print(soobshchenie)
+    with alive_bar( len( soobshchenie ),bar = 'brackets',spinner = 'radioactive' ) as bar:
+         for _ in range( len( soobshchenie ) ):
+              time.sleep(0.06)
+              bar( )
+    os.system ('cls||clear')          
+    if otvet.status_code==200:
         print( 'Связь с роботом установлена!' ) 
     else:
         print( 'Нет связи с роботом' )    
     print( )
-communication(adres)
-def playsound( soundfile ):
+svyazatsya_s_robotom(adres)
+def igrat_muzyku( soundfile ):
     sound=pygame.mixer.Sound( soundfile )
     clock=pygame.time.Clock( )
     sound.play( )
     while pygame.mixer.get_busy( ):
         clock.tick( FRAMERATE )
 from alive_progress import alive_bar
-def play_morze_sound( morz ):
+def proigrat_muzyku_Morze( morz ):
     print( )
     with alive_bar( len(morz),bar = 'brackets',spinner = 'dots_waves2' ) as bar:
         if   morz[ 0 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 0 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 0 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 1 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 1 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 1 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 2 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 2 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 2 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 3 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 3 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 3 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 4]  == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 4 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 4 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 5 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 5 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 5 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )  
         if   morz[ 6 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 6 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 6 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 7 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 7 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 7 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 8 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 8 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 8 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 9 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 9 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 9 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )   
         if   morz[ 10 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 10 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 10 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 11 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 11 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 11 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 12 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 12 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 12 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 13 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 13 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 13 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 14 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 14 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 14 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 15 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 15 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 15 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 16 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 16 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 16 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 17 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 17 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 17 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 18 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 18 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 18 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 19 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 19 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 19 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 20 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 20 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 20 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 21 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 21 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 21 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 22 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 22 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 22 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 23 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 23 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 23 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 24 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 24 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 24 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 25 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 25 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 25 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 26 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 26 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 26 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 27 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 27 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 27 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
         if   morz[ 28 ] == '.':
-             playsound(pygame.mixer.Sound( 'dot.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
         elif morz[ 28 ] == '-':
-             playsound(pygame.mixer.Sound( 'dash.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
         elif morz[ 28 ] == '|':
-             playsound(pygame.mixer.Sound( 'long_silence.ogg' ))
+             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
     print()
 import time
-def to_robot(a, m):
-    print('Отправка сообщения роботу...');play_morze_sound(m)
-    r = requests.post(a,m.encode('utf-8'))
-    if r.status_code == 200:
+def otpravka_soobshcheniya_robotu(adres, soobshchenie):
+    print('Отправка сообщения роботу...')#;proigrat_muzyku_Morze(soobshchenie)
+    otvet = requests.post(adres,soobshchenie.encode('utf-8'))
+    if otvet.status_code == 200:
         print('Команда принята.');time.sleep(1);print('Бегу к вам!')
     else:
-        print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')
+        print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')       
