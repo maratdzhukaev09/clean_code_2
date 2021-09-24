@@ -65,7 +65,9 @@ azbukaMorze = {'а': '.-',
                ')': '-.--.- ',
                ' ': '|',
                '_': '..--.- '}
-soobchenie='Нужен селен' 
+from dotenv import load_dotenv
+load_dotenv()
+soobchenie=os.getenv('komanda', default = 'По-умолчанию')
 soobchenie=soobchenie.lower()
 x=soobchenie[0]
 xx=soobchenie[1]
@@ -281,5 +283,7 @@ def otpravka_soobshcheniya_robotu(adres, soobshchenie):
     otvet = requests.post(adres,soobshchenie.encode('utf-8'))
     if otvet.status_code == 200:
         print('Команда принята.');time.sleep(1);print('Бегу к вам!')
+    elif otvet.status_code == 501:
+        print('Команда принята. Продолжаю выполнять прежнюю инструкцию.')
     else:
-        print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')
+        print('Команда не принята. Не понял вас!')
