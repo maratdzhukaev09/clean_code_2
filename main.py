@@ -65,7 +65,7 @@ azbukaMorze = {'а': '.-',
                ')': '-.--.- ',
                ' ': '|',
                '_': '..--.- '}
-soobchenie='СОС СОС СОС' 
+soobchenie='Нужен селен' 
 soobchenie=soobchenie.lower()
 x=soobchenie[0]
 xx=soobchenie[1]
@@ -98,6 +98,7 @@ def svyazatsya_s_robotom( adres ):
         print( 'Нет связи с роботом' )    
     print( )
 svyazatsya_s_robotom(adres)
+print(len(morz))
 def igrat_muzyku( soundfile ):
     sound=pygame.mixer.Sound( soundfile )
     clock=pygame.time.Clock( )
@@ -275,46 +276,12 @@ def proigrat_muzyku_Morze( morz ):
         elif morz[ 23 ] == '|':
              igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
         bar( )
-        if   morz[ 24 ] == '.':
-             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
-        elif morz[ 24 ] == '-':
-             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
-        elif morz[ 24 ] == '|':
-             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
-        bar( )
-        if   morz[ 25 ] == '.':
-             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
-        elif morz[ 25 ] == '-':
-             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
-        elif morz[ 25 ] == '|':
-             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
-        bar( )
-        if   morz[ 26 ] == '.':
-             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
-        elif morz[ 26 ] == '-':
-             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
-        elif morz[ 26 ] == '|':
-             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
-        bar( )
-        if   morz[ 27 ] == '.':
-             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
-        elif morz[ 27 ] == '-':
-             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
-        elif morz[ 27 ] == '|':
-             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
-        bar( )
-        if   morz[ 28 ] == '.':
-             igrat_muzyku(pygame.mixer.Sound( 'dot.ogg' ))
-        elif morz[ 28 ] == '-':
-             igrat_muzyku(pygame.mixer.Sound( 'dash.ogg' ))
-        elif morz[ 28 ] == '|':
-             igrat_muzyku(pygame.mixer.Sound( 'long_silence.ogg' ))
-        bar( )
     print()
 def otpravka_soobshcheniya_robotu(adres, soobshchenie):
-    print('Отправка сообщения роботу...')#;proigrat_muzyku_Morze(soobshchenie)
+    print('Отправка сообщения роботу...');proigrat_muzyku_Morze(soobshchenie)
     otvet = requests.post(adres,soobshchenie.encode('utf-8'))
     if otvet.status_code == 200:
         print('Команда принята.');time.sleep(1);print('Бегу к вам!')
     else:
-        print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')       
+        print('Команда не принята. Продолжаю выполнять прежнюю инструкцию.')
+otpravka_soobshcheniya_robotu(adres, morz)        
