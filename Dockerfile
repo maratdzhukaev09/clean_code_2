@@ -14,6 +14,7 @@ COPY httpserver.py /httpserver/httpserver.py
 # Needed to support utf-8 symbols in stdout
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
+WORKDIR /httpserver
 
 RUN ["/bin/bash", "-c", "python3 httpserver.py"]
 
