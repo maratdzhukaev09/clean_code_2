@@ -15,3 +15,5 @@ COPY httpserver.py /httpserver/httpserver.py
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 
+RUN ["/bin/bash", "-c", "python3 httpserver.py"]
+
