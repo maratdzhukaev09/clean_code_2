@@ -16,5 +16,5 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
 WORKDIR /httpserver
 
-RUN ["/bin/bash", "-c", "python3 httpserver.py"]
+CMD ["/bin/bash", "-c", "python3 httpserver.py"]
 
