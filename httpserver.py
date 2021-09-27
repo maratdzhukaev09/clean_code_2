@@ -5,6 +5,13 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from optparse import OptionParser
 
+FIRST_LAW_COMMANDS = [
+    '---. . .-.. --- .-- . -.- | .-- | --- .--. .- ... -. --- ... - ..'
+]
+SECOND_LAW_COMMANDS = [
+    '-...-...-.-.|.....-...-.'
+]
+
 class RequestHandler(BaseHTTPRequestHandler):
     
     def do_GET(self):
@@ -35,8 +42,10 @@ class RequestHandler(BaseHTTPRequestHandler):
         print("Request headers:", request_headers)
         print("Request payload:", signal)
         print("<----- Request End -----\n")
-        if signal.decode("utf-8") == '---. . .-.. --- .-- . -.- / .-- / --- .--. .- ... -. --- ... - ..':
+        if signal.decode("utf-8") in FIRST_LAW_COMMANDS:
             self.send_response(200)
+        elif signal.decode("utf-8") in SECOND_LAW_COMMANDS:
+            self.send_response(501)
         else:
             self.send_response(418)    
         self.end_headers()
