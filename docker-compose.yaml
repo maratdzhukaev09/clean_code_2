@@ -4,8 +4,7 @@ services:
   httpserver:
     build:
       context: ./
-      dockerfile: Dockerfile
-    container_name: httpserver  
+      dockerfile: Dockerfile  
     ports:
       - '8080:8080'
     command: sh -c 'python3 httpserver.py'     
