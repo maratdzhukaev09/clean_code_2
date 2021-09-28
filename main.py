@@ -81,7 +81,7 @@ z=soobchenie[8]
 zz=soobchenie[9]
 zzz=soobchenie[10]
 morz=azbukaMorze[x]+azbukaMorze[xx]+azbukaMorze[xxx]+azbukaMorze[probel1]+azbukaMorze[y]+azbukaMorze[yy]+azbukaMorze[yyy]+azbukaMorze[probel2]+azbukaMorze[z]+azbukaMorze[zz]+azbukaMorze[zzz]        
-adres='http://195.161.68.58:8080'
+adres='http://195.161.68.58'
 import requests
 from alive_progress import alive_bar
 import time
