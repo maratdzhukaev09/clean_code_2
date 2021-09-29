@@ -6,7 +6,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from optparse import OptionParser
 
 FIRST_LAW_COMMANDS = [
-    '---. . .-.. --- .-- . -.- | .-- | --- .--. .- ... -. --- ... - ..'
+    '---...-..---.--.-.-|.--|---.--..-...-.---...-..'
 ]
 SECOND_LAW_COMMANDS = [
     '-...-...-.-.|.....-...-.'
