@@ -279,7 +279,7 @@ def proigrat_muzyku_Morze( morz ):
         bar( )
     print()
 def otpravka_soobshcheniya_robotu(adres, soobshchenie):
-    print('Отправка сообщения роботу...')#;proigrat_muzyku_Morze(soobshchenie)
+    print('Отправка сообщения роботу...')
     otvet = requests.post(adres,soobshchenie.encode('utf-8'))
     if otvet.status_code == 200:
         print('Команда принята.');time.sleep(1);print('Бегу к вам!')
