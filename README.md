@@ -1,6 +1,6 @@
 # Robot maintenance 
 
-This service kit allows you to contact the robot in emergency situations
+This service kit allows you to contact the robot in emergency situations.
 
 ## How to start
 
