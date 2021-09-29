@@ -284,5 +284,4 @@ def otpravka_soobshcheniya_robotu(adres, soobshchenie):
     elif otvet.status_code == 501:
         print('Команда принята. Продолжаю выполнять прежнюю инструкцию.')
     else:
-        print('Команда не принята. Не понял вас!')
-otpravka_soobshcheniya_robotu(adres, morz)        
+        print('Команда не принята. Не понял вас!')      
