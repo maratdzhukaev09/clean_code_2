@@ -19,7 +19,7 @@ Interpreted in text last voice command: "Нужен селен".
 .env example:
 
 ```
-komanda=Нужен селен
+komanda=команда
 ```
 
 ## Run
