@@ -65,8 +65,6 @@ azbukaMorze = {'а': '.-',
                ')': '-.--.- ',
                ' ': '|',
                '_': '..--.- '}
-from dotenv import load_dotenv
-load_dotenv()
 soobchenie=os.getenv('komanda', default = 'По-умолчанию')
 soobchenie=soobchenie.lower()
 x=soobchenie[0]
@@ -287,3 +285,4 @@ def otpravka_soobshcheniya_robotu(adres, soobshchenie):
         print('Команда принята. Продолжаю выполнять прежнюю инструкцию.')
     else:
         print('Команда не принята. Не понял вас!')
+otpravka_soobshcheniya_robotu(adres, morz)        
